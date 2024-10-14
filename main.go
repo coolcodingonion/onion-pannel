@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"onion-pannel/routes"
+	"onion-pannel/utils"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
+	routes.InitRouter().Run(utils.HttpPort)
 }
