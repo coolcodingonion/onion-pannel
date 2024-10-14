@@ -1,6 +1,11 @@
 package utils
 
-import "gopkg.in/ini.v1"
+import (
+	"fmt"
+	"os"
+
+	"gopkg.in/ini.v1"
+)
 
 var (
 	AppMode  string
@@ -15,7 +20,10 @@ var (
 )
 
 func init() { 
-	file, err := ini.Load("../config/config.ini")
+	//查看当前路径
+	dir, _ := os.Getwd()
+	fmt.Println(dir)
+	file, err := ini.Load("..\\config\\config.ini")
 	if err != nil {
 		panic("Failed to load 'config/config.ini': " + err.Error())
 	}
