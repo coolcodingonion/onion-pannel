@@ -15,7 +15,7 @@ var (
 )
 
 func init() { 
-	file, err := ini.Load("config/app.ini")
+	file, err := ini.Load("../config/app.ini")
 	if err != nil {
 		panic("Failed to load 'config/app.ini': " + err.Error())
 	}
